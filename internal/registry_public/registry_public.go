@@ -1,4 +1,4 @@
-package registry
+package registry_public
 
 import "context"
 
@@ -27,6 +27,7 @@ type Watcher interface {
 	// Stop close the watcher.
 	Stop() error
 }
+
 // ServiceInstance is an instance of a service in a discovery system.
 type ServiceInstance struct {
 	// ID is the unique instance ID as registered.
@@ -43,4 +44,3 @@ type ServiceInstance struct {
 	//   grpc://127.0.0.1:9000?isSecure=false
 	Endpoints []string `json:"endpoints"`
 }
-
