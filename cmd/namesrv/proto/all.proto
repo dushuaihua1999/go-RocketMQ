@@ -1,0 +1,25 @@
+syntax = "proto3";
+package proto;
+
+// broker的具体信息
+message broker {
+  string endpoint = 1;
+  string IsAvailable = 2;
+  bool IsRunning = 3;
+}
+
+// reqReg里面包含着请求的NameServer的
+// endpoint: ip地址加端口号,集群选择在内部实现即可.
+// role：代表此次来的是producer还是consumer，涉及到调度器的选择
+// 以及内部的调度负载均衡
+message reqReg {
+  string role = 1;
+}
+
+message registryMes {
+  repeated broker Brokers = 1;
+}
+
+service AcquireRegistry {
+  rpc ListRegisteredBroker(reqReg) returns (registryMes);
+}

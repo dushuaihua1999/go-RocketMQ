@@ -1,9 +1,5 @@
 package main
 
-var (
+func main() {
 
-)
-
-func main()  {
-	
 }
