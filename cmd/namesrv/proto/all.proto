@@ -3,6 +3,9 @@ package proto;
 
 // broker的具体信息
 message broker {
+  string id = 4;
+  string name = 5;
+  string metadata = 6;
   string endpoint = 1;
   string IsAvailable = 2;
   bool IsRunning = 3;
@@ -20,6 +23,9 @@ message registryMes {
   repeated broker Brokers = 1;
 }
 
+message
+
 service AcquireRegistry {
   rpc ListRegisteredBroker(reqReg) returns (registryMes);
+  rpc RegisteredBroker(broker) returns ()
 }

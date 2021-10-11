@@ -16,8 +16,14 @@ func (a *AcquireRegistryServer) ListRegisteredBroker(ctx context.Context, in *pr
 
 	// 开始取出数据,看看是生产者还是消费者
 	role := in.GetRole()
+	if role == "consumer" {
+
+	} else {
+
+	}
 	// 集群选择 -- > 集群选择器
 	// 选择调度器 --> role类型的调度器
 	// 选择broker --> 根据调度器选择broker
 
 }
+
